@@ -1,9 +1,20 @@
 <template>
 	<div class="head">
-		<img src="../assets/menu.png" class="head-menu">
+		<img src="../assets/menu.png" class="head-menu" @click="show">
 		<span class="name">VUE - cnode</span>
 	</div>
 </template>
+<script>
+	export default{
+		name:"Vhead",
+		methods:{
+			show:function(){
+				console.log(666);
+				this.$emit('sm');
+			}
+		}
+	}
+</script>
 <style>
 	.head{
 		height: 100px;

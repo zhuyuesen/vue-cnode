@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <div class="page-shade"></div>
-    <Vhead></Vhead>
-  	<Vmenu></Vmenu>	
-    <router-view/>
+    <div class="page-shade" v-if="showMenu" @click="hideMenufn"></div>
+    <Vhead @sm="showMenufn"></Vhead>
+  	<Vmenu v-if="showMenu" @hide="hide"></Vmenu>	
+    <router-view @hide="hideMenufn" />
     <VVmenu></VVmenu>
 
   </div>
@@ -17,6 +17,26 @@ export default {
   name: 'App',
   components:{
   	Vmenu,VVmenu,Vhead
+  },
+  data(){
+    return{
+      showMenu:true
+    }
+  },
+  methods:{
+    showMenufn:function(){
+      console.log("执行了")
+      this.showMenu = true;
+    },
+    hideMenufn:function(){
+      this.showMenu = false;
+    },
+    hide:function(){
+      this.showMenu = false;
+    },
+  },
+  created:function(){
+    console.log("created 执行了")
   }
 }
 </script>

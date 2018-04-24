@@ -1,9 +1,9 @@
 <template>
 	<div class="Vmenu">
 		<div class="link-box">
-			<router-link to="/" class="menu-link">首页</router-link>
-			<router-link to="/about" class="menu-link">关于</router-link>
-			<router-link to="/" class="menu-link">登录</router-link>
+			<router-link to="/" class="menu-link" @click.native="hide">首页</router-link>
+			<router-link to="/about" class="menu-link" @click.native="hide">关于</router-link>
+			<router-link to="/login" class="menu-link" @click.native="hide">登录</router-link>
 		</div>
 	</div>
 </template>
@@ -33,6 +33,12 @@
 </style>
 <script>
 	export default{
-		name:'Vmenu'
+		name:'Vmenu',
+		methods:{
+			hide:function(){
+				console.log("Vhead 的 hide 方法")
+				this.$emit("hide")
+			}
+		}
 	}
 </script>
