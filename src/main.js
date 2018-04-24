@@ -4,7 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
- import 'lib-flexible/flexible'
+import 'lib-flexible/flexible'
+
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios,axios)
 
 Vue.config.productionTip = false
 

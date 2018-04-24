@@ -4,8 +4,6 @@
     <Vhead @sm="showMenufn"></Vhead>
   	<Vmenu v-if="showMenu" @hide="hide"></Vmenu>	
     <router-view @hide="hideMenufn" />
-    <VVmenu></VVmenu>
-
   </div>
 </template>
 
