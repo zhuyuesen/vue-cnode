@@ -22,3 +22,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 > 系统使用了vue-router,在app.vue 中 可以引入其他组件
+
+> test
