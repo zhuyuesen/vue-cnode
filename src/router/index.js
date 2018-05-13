@@ -5,6 +5,7 @@ import Home from '@/components/home/Home'
 import list from '@/components/list/list'
 import about from '@/components/about'
 import login from '@/components/login'
+import detail from '@/components/detail/detail'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login
+    }, 
+    {
+      path: '/detail',
+      name: 'detail',
+      component: detail
     }
   ]
 })

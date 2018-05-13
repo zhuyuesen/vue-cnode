@@ -1,8 +1,11 @@
 <template>
   <div id="app">
     <div class="page-shade" v-if="showMenu" @click="hideMenufn"></div>
+    <!-- 头部 -->
     <Vhead @sm="showMenufn"></Vhead>
+    <!-- 左侧菜单 -->
   	<Vmenu v-if="showMenu" @hide="hide"></Vmenu>	
+
     <router-view @hide="hideMenufn" />
   </div>
 </template>
@@ -10,15 +13,14 @@
 <script>
 import Vhead from './components/Vhead'
 import Vmenu from './components/Vmenu/Vmenu.vue'
-import VVmenu from './components/VVmenu'
 export default {
   name: 'App',
   components:{
-  	Vmenu,VVmenu,Vhead
+  	Vmenu,Vhead
   },
   data(){
     return{
-      showMenu:true
+      showMenu:false
     }
   },
   methods:{
