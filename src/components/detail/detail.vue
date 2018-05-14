@@ -40,7 +40,10 @@ export default {
       	content:"",
         replies:[
           {
-
+            author:{
+              avatar_url:"",
+              loginname:"",
+            },
           }
         ],
       },

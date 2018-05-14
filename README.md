@@ -2,25 +2,28 @@
 
 > A Vue.js project
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+使用  $router.push 跳转组件时，刷新页面报错了，因为在页面取不到传过来的参数了，怎么解决？？
 
 
-> 系统使用了vue-router,在app.vue 中 可以引入其他组件
+方法一：
+	你在用 vue-router 跳转的时候可以把参数写进 query 里this.$router.push({name:'articleDetail, query:{articleId: articleId}});
 
-> test
+	这样你的 url 就会像 http://xxx.xxx.xxx/articleDetail?articleId=123，这样无论你怎么刷新 articleId 都不会丢失
+
+	然后在你的 init 方法里 可以用 this.articleId = this.$route.query.articleId; 来获取id
+
+方法二：
+	如果要用 params 传参的话，可能需要在你的路由路径里也加上这个参数，比如你用
+
+	this.$router.push({name:'articleDetail, params:{articleId: articleId}});跳转，那么在路由里就要这样写
+
+	routes: [
+	    {
+	      path: '/articleDetail/:articleId',
+	      name: 'articleDetail'
+	    }
+	  ]
+	path: '/articleDetail/:articleId',里的 :articleId 是必须要有的
+
+
+	具体的可以参考 Vue-router 命名路由

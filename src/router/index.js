@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Home from '@/components/home/Home'
 import list from '@/components/list/list'
-import about from '@/components/about'
+import about from '@/components/about/about'
 import login from '@/components/login'
 import detail from '@/components/detail/detail'
 
@@ -27,7 +27,7 @@ export default new Router({
       component: login
     }, 
     {
-      path: '/detail',
+      path: '/detail/:id',
       name: 'detail',
       component: detail
     }
